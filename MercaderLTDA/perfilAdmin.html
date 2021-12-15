@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/resources/img/icons/icon-48x48.png" />
+    <title>Manager Profile</title>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- TEMPLETE ADMIN -->
+    <link href="resources/css/app.css" rel="stylesheet">
+    <!-- DATA TABLES -->
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- MIS JS -->
+    <script src="resources/js/perfilAdmin.js"></script>
+</head>
+<body>
+    <!-- CONTAINER GENERAL -->
+    <div class="wrapper">
+        <!-- MI NAV VERTICAL-->
+        <nav id="sidebar" class="sidebar js-sidebar">
+
+			<div class="sidebar-content js-simplebar">
+
+				<a class="sidebar-brand" href="perfilAdmin.html"><span class="align-middle">Admin Profile</span></a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Services</li>
+					<li class="sidebar-item active"><a class="sidebar-link" href="perfilAdmin.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Manage Users</span></a></li>
+                    <li class="sidebar-item active"><a class="sidebar-link" href="productos.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Product's Stock</span></a></li>
+				</ul>
+
+			</div>
+		</nav>
+        <!-- FIN MI NAV -->
+        <!-- CONTAINER MAIN -->
+        <div class="main">
+            <!-- MENU SUPERIOR -->
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle"><i class="hamburger align-self-center"></i></a>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                            <img src="resources/img/avatars/avatar.png" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark miNombreUsuario">Admon</span>
+                        </a>
+					</ul>
+				</div>
+			</nav>
+            <!-- FIN MENU SUPERIOR -->
+            <!-- MI CONTENIDO -->
+            <main class="content">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalRegistro">Add User</button>
+                <br>
+                <br>
+                <!-- TABLA USUARIOS -->
+                <table id="tablaUsuarios" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Identification</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Cellphone</th>
+                            <th>Email</th>
+                            <th>password</th>
+                            <th>zone</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Identification</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Cellphone</th>
+                            <th>Email</th>
+                            <th>password</th>
+                            <th>zone</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- TABLA USUARIOS -->
+
+            </main>
+            <!-- FIN CONTENIDO -->
+        </div>
+        <!-- FIN CONTAINER MAIN -->
+        <!-- modal Registro -->
+        <div class="modal fade" id="myModalRegistro">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Add User</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistro">
+                        <label for="usr">Identification:</label>
+                        <input type="text" class="form-control" id="identificacion" name="identificacion">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <label for="usr">Address:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                        <label for="usr">cellPhone:</label>
+                        <input type="text" class="form-control" id="celular" name="celular">
+                        <label for="usr">Email:</label>
+                        <input type="text" class="form-control" id="mail" name="E-mail">
+                        <label for="usr">Password:</label>
+                        <input type="text" class="form-control" id="pwd" name="password">
+                        <label for="usr">Confirmation Password:</label>
+                        <input type="text" class="form-control" id="pwr_r" name="canfirmar password">
+                        <br>
+                        <label for="usr">Zone</label>
+                        <select id="zona">
+                            <option value="" disabled selected>Select a zone</option>
+                            <option value="ZONA 1">Zone 1</option>
+                            <option value="ZONA 2">Zone 2</option>
+                            <option value="ZONA 3">Zone 3</option>
+                            <option value="ZONA 4">Zone 4</option>
+                            <option value="ZONA 5">Zone 5</option>
+                        </select>
+                        <br>
+                        <label for="usr">Type</label>
+                        <select id="type">
+                            <option value="" disabled selected>Select a user's type</option>
+                            <option value="ADM">Manager</option>
+                            <option value="COORD">Leader of zone</option>
+                            <option value="COORD">Comecial Advisor</option>
+                        </select>
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary btn_agregarUsuario">Add User</button>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <!-- ***Fin Registro -->
+        <!-- modal Registro Editar-->
+        <div class="modal fade" id="myModalRegistroEditar">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Edit User</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistroEditar">
+                        <label for="usr">Identification:</label>
+                        <input type="text" class="form-control" id="identificacion_e" name="identificacion">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" id="nombre_e" name="nombre">
+                        <label for="usr">Address:</label>
+                        <input type="text" class="form-control" id="direccion_e" name="direccion">
+                        <label for="usr">cellPhone:</label>
+                        <input type="text" class="form-control" id="celular_e" name="celular">
+                        <label for="usr">Email:</label>
+                        <input type="text" class="form-control" id="mail_e" name="E-mail">
+                        <label for="usr">Password:</label>
+                        <input type="text" class="form-control" id="pwd_e" name="password">
+                        <br>
+                        <label for="usr">Zone</label>
+                        <select id="zona_e">
+                            <option value="">Select a zone</option>
+                            <option value="ZONA 1">Zone 1</option>
+                            <option value="ZONA 2">Zone 2</option>
+                            <option value="ZONA 3">Zone 3</option>
+                            <option value="ZONA 4">Zone 4</option>
+                            <option value="ZONA 5">Zone 5</option>
+                        </select>
+                        <br>
+                        <label for="usr">Type</label>
+                        <select id="type_e">
+                            <option value="">Select user's type</option>
+                            <option value="ADM">Administrador</option>
+                            <option value="COORD">Coordinador de Zona</option>
+                            <option value="COORD">Asesor Comercial</option>
+                        </select>
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary btn_editarUsuario">Edit User</button>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <!-- ***Fin Registro -->
+    </div>
+    <!--  FIN CONTAINER GENERAL -->
+   <script src="resources/js/app.js"></script>
+</body>
+</html>

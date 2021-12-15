@@ -1,0 +1,194 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 67108864 bytes for Failed to commit area from 0x00000000c1600000 to 0x00000000c5600000 of length 67108864.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3311), pid=9104, tid=10572
+#
+# JRE version:  (11.0.13+8) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.13+8-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dclassworlds.conf=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin\m2.conf -Dmaven.home=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3 -Dlibrary.jansi.path=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Lenovo\Desktop\CICLO4\Reto2_Web org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-12.5\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install
+
+Host: Intel(R) Core(TM) i3-8130U CPU @ 2.20GHz, 4 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+Time: Sat Dec 11 02:40:44 2021 Hora est. Pacífico, Sudamérica elapsed time: 0.021294 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001a5fe00f800):  JavaThread "Unknown thread" [_thread_in_vm, id=10572, stack(0x00000023b1600000,0x00000023b1700000)]
+
+Stack: [0x00000023b1600000,0x00000023b1700000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x62373a]
+V  [jvm.dll+0x7b0769]
+V  [jvm.dll+0x7b1e2f]
+V  [jvm.dll+0x7b2503]
+V  [jvm.dll+0x253658]
+V  [jvm.dll+0x620a3a]
+V  [jvm.dll+0x6152b5]
+V  [jvm.dll+0x30bcac]
+V  [jvm.dll+0x30bb32]
+V  [jvm.dll+0x310856]
+V  [jvm.dll+0x35642f]
+V  [jvm.dll+0x355e60]
+V  [jvm.dll+0x2e87c8]
+V  [jvm.dll+0x2e9926]
+V  [jvm.dll+0x78a4c7]
+V  [jvm.dll+0x78bc51]
+V  [jvm.dll+0x3631b9]
+V  [jvm.dll+0x76d370]
+V  [jvm.dll+0x3d1ecf]
+V  [jvm.dll+0x3d4261]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001a5fbe95ff0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001a5fe028000 GCTaskThread "GC Thread#0" [stack: 0x00000023b1700000,0x00000023b1800000] [id=2652]
+  0x000001a5fe042000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000023b1800000,0x00000023b1900000] [id=7632]
+  0x000001a5fe044000 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000023b1900000,0x00000023b1a00000] [id=4236]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe535383a7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001a5fe00b350] Heap_lock - owner thread: 0x000001a5fe00f800
+
+Heap address: 0x00000000c1600000, size: 1002 MB, Compressed Oops mode: Non-zero based: 0x00000000c1600000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.014 Loaded shared library C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff6c1410000 - 0x00007ff6c141d000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\java.exe
+0x00007ffe9c670000 - 0x00007ffe9c865000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe9c0f0000 - 0x00007ffe9c1ae000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe9a230000 - 0x00007ffe9a4f8000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe9a090000 - 0x00007ffe9a190000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe92630000 - 0x00007ffe92647000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\jli.dll
+0x00007ffe92490000 - 0x00007ffe924a5000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\VCRUNTIME140.dll
+0x00007ffe9bcf0000 - 0x00007ffe9be91000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe99d90000 - 0x00007ffe99db2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe9c010000 - 0x00007ffe9c03b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe99f80000 - 0x00007ffe9a08b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe9a190000 - 0x00007ffe9a22d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe884e0000 - 0x00007ffe8877a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffe9b9b0000 - 0x00007ffe9ba4e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe9c210000 - 0x00007ffe9c240000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffe77690000 - 0x00007ffe7772b000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\msvcp140.dll
+0x00007ffe53240000 - 0x00007ffe53dca000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\server\jvm.dll
+0x00007ffe9c040000 - 0x00007ffe9c0ec000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe9ae90000 - 0x00007ffe9af2b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe9ad60000 - 0x00007ffe9ae8a000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe9af40000 - 0x00007ffe9af48000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe95a40000 - 0x00007ffe95a49000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe9bad0000 - 0x00007ffe9bb3b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe84690000 - 0x00007ffe846b7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe90610000 - 0x00007ffe9061a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe98600000 - 0x00007ffe98612000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe92a20000 - 0x00007ffe92a30000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\verify.dll
+0x00007ffe97a00000 - 0x00007ffe97be4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe84590000 - 0x00007ffe845bc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe9a500000 - 0x00007ffe9a583000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe878e0000 - 0x00007ffe87908000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\java.dll
+0x00007ffe929a0000 - 0x00007ffe929aa000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\jimage.dll
+0x00007ffe87770000 - 0x00007ffe87787000 	C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64\bin\server
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin\m2.conf -Dmaven.home=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3 -Dlibrary.jansi.path=C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Lenovo\Desktop\CICLO4\Reto2_Web 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-12.5\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install
+java_class_path (initial): C:\Users\Lenovo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\boot\plexus-classworlds-2.6.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 67108864                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1050673152                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Users\Lenovo\AppData\Local\Java\zulu11.52.13-ca-jdk11.0.13-win_x64\zulu11.52.13-ca-jdk11.0.13-win_x64
+PATH=C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Lenovo\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Lenovo\AppData\Local\Programs\Python\Python39\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Lenovo\AppData\Local\GitHubDesktop\bin;C:\Users\Lenovo\AppData\Roaming\npm
+USERNAME=Lenovo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+OS uptime: 0 days 1:07 hours
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xb4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 4001M (251M free)
+TotalPageFile size 7501M (AvailPageFile size 8M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 51M, peak: 115M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.13+8-LTS) for windows-amd64 JRE (Zulu11.52+13-CA) (11.0.13+8-LTS), built on Oct  7 2021 16:00:23 by "zulu_re" with MS VC++ 15.9 (VS2017)
+
+END.

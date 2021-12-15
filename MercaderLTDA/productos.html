@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/resources/img/icons/icon-48x48.png" />
+    <title>Products</title>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- TEMPLETE ADMIN -->
+    <link href="resources/css/app.css" rel="stylesheet">
+    <!-- DATA TABLES -->
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- MIS JS -->
+    <script src="resources/js/productoCrud.js"></script>
+</head>
+<body>
+    <!-- CONTAINER GENERAL -->
+    <div class="wrapper">
+        <!-- MI NAV VERTICAL-->
+        <nav id="sidebar" class="sidebar js-sidebar">
+
+			<div class="sidebar-content js-simplebar">
+
+				<a class="sidebar-brand" href="perfilAdmin.html"><span class="align-middle">Admin Profile</span></a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Services</li>
+					<li class="sidebar-item active"><a class="sidebar-link" href="perfilAdmin.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Manage Users</span></a></li>
+                    <li class="sidebar-item active"><a class="sidebar-link" href="productos.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Product's Stock</span></a></li>
+
+				</ul>
+
+			</div>
+		</nav>
+        <!-- FIN MI NAV -->
+        <!-- CONTAINER MAIN -->
+        <div class="main">
+            <!-- MENU SUPERIOR -->
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle"><i class="hamburger align-self-center"></i></a>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                            <img src="resources/img/avatars/avatar.png" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark miNombreUsuario">Admon</span>
+                        </a>
+					</ul>
+				</div>
+			</nav>
+            <!-- FIN MENU SUPERIOR -->
+            <!-- MI CONTENIDO -->
+            <main class="content">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalRegistro">Add Product</button>
+                <br>
+                <br>
+                <table id="tablaProductos" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>brand</th>
+                            <th>category</th>
+                            <th>name</th>
+                            <th>description</th>
+                            <th>price</th>
+                            <th>availability </th>
+                            <th>quantity</th>
+                            <th>photography</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>brand</th>
+                            <th>category</th>
+                            <th>name</th>
+                            <th>description</th>
+                            <th>price</th>
+                            <th>availability </th>
+                            <th>quantity</th>
+                            <th>photography</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+
+            </main>
+            <!-- FIN CONTENIDO -->
+        </div>
+        <!-- FIN CONTAINER MAIN -->
+        <!-- modal Registro -->
+        <div class="modal fade" id="myModalRegistro">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Add Product</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistro">
+                        <label for="usr">id:</label>
+                        <input type="text" class="form-control" id="id" name="id">
+                        <label for="usr">brand:</label>
+                        <input type="text" class="form-control" id="brand" name="brand">
+                        <label for="usr">category:</label>
+                        <input type="text" class="form-control" id="category" name="category">
+                        <label for="usr">name:</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="usr">description:</label>
+                        <input type="text" class="form-control" id="description" name="description">
+                        <label for="usr">price:</label>
+                        <input type="number" step="0.01" class="form-control" id="price" name="price">
+                        <br>
+                        <label for="usr">availability </label>
+                        <select id="availability">
+                            <option value="" disabled selected>(YES/NO)</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                        <br>
+                        <label for="usr">quantity:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity">
+                        <label for="usr">photography :</label>
+                        <input type="text" class="form-control" id="photography" name="photography">
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistroProducto"></p>
+                        <button type="button" class="btn btn-primary btn_agregarProducto">Add Product</button>
+                    </div>
+                </div>
+
+            </div> 
+            </div>
+        </div>
+        <!-- ***Fin Registro -->
+        <!-- modal Registro Editar-->
+        <div class="modal fade" id="myModalRegistroEditar">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Edit Producto</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistroEditar">
+                        <label for="usr">id:</label>
+                        <input type="number" class="form-control" id="id_e" name="id">
+                        <label for="usr">brand:</label>
+                        <input type="text" class="form-control" id="brand_e" name="brand">
+                        <label for="usr">category:</label>
+                        <input type="text" class="form-control" id="category_e" name="category">
+                        <label for="usr">name:</label>
+                        <input type="text" class="form-control" id="name_e" name="name">
+                        <label for="usr">description:</label>
+                        <input type="text" class="form-control" id="description_e" name="description">
+                        <label for="usr">price:</label>
+                        <input type="number" step="0.01" class="form-control_e" id="price" name="price">
+                        <br>
+                        <label for="usr">availability </label>
+                        <select id="availability_e">
+                            <option value="" disabled selected>(YES/NO)</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                        <br>
+                        <label for="usr">quantity:</label>
+                        <input type="number" step="0.01" class="form-control" id="quantity_e" name="quantity">
+                        <label for="usr">photography :</label>
+                        <input type="text" class="form-control" id="photography_e" name="photography">
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary btn_editarProducto">Edit Product</button>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <!-- ***Fin Registro -->
+    </div>
+    <!--  FIN CONTAINER GENERAL -->
+   <script src="resources/js/app.js"></script>
+</body>
+</html>
